@@ -1,0 +1,39 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}
+<title>Empolyee List</title>
+{% endblock %}
+
+{% block content %}
+<h1>Employee List</h1>
+
+<h1>Student Details</h1>
+    <table>
+        <tr>
+            <th>Emp Id</th>
+            <th>Employee Name</th>
+            <th>Employee City</th>
+            <th>Employee Mobile</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for data in object_list %}
+            <tr>
+                <td>{{data.empid}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.city}}</td>
+                <td>{{data.mobile}}</td>
+                <td><a href="/{{data.pk}}/Update">Update</a></td>
+                <td><a href="/{{data.pk}}/Delete">Delete</a></td>
+
+
+            </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+
+{% endblock %}
